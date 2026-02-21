@@ -44,5 +44,5 @@ if(a === b)
 // console.log(c);
 
 //ternery operator
-let c = a ==b ? 12  : 13
-console.log(c);
+// let c = a ==b ? 12  : 13
+// console.log(c);
