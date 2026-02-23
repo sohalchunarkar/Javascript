@@ -6,7 +6,7 @@ let ans = arr.reduce((prevVal, currVal) => {
 
 
     return prevVal + currVal
-},0)
+},0) // initial value of the preval it will then takes as zero
 // console.log(ans);
 
 const shoppingCart = [
