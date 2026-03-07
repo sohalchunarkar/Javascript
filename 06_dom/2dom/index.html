@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This is Child Parent Relation</title>
+    <style>
+        * {
+            background-color: black;
+            color: white;
+            padding: 23px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="child ">Monday</div>
+        <div class="child ">Tuesday</div>
+        <div class="child ">Wednesday</div>
+        <div class="child ">Thursday</div>
+    </div>
+</body>
+
+<script>
+    const ele = document.querySelector(".parent")
+    //    console.log(ele);
+    //    console.log(ele.firstElementChild.innerHTML);
+    // console.log(ele.children[0].innerHTML);
+    for (let i = 0; i < ele.children.length; i++) {
+        // console.log(`${i}th element is ${ele.children[i].innerHTML}`);
+
+    }
+
+    const day = document.querySelector(".child")
+    // day.nextSibling.style.color = 'red'
+    // console.log(ele.childNodes);
+
+    console.log(day.nextElementSibling);
+    day.nextElementSibling.style.color = 'green'
+    day.style.color = 'red'
+    
+    
+    
+
+</script>
+
+</html>
