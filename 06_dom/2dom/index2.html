@@ -27,12 +27,15 @@
     div.style.color = 'red'
     div.style.fontSize = '23px'
     div.style.backgroundColor = 'green'
+    div.setAttribute("title" , "thisisdiv")
 
     // div.innerText = "hello world this is div"
     const addtext = document.createTextNode("This is div")
     div.appendChild(addtext)
 
     document.body.appendChild(div)
+    
+    console.log(div.attributes);
     
 
 
