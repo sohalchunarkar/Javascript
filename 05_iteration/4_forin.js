@@ -11,11 +11,11 @@ let map = new Map()
 map.set("sohal", 23)
 map.set("alex", 25)
 
-// for (const key in map) {
-//     console.log(key);
+for (const key in map) {
+    // console.log(key);
 
 
-// }
+}
 
 let obj ={
     name : "rohit",
