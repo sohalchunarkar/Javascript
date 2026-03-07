@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit , remove in | dom</title>
+    <style>
+        * {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="lang">
+        <li>java</li>
+    </ul>
+</body>
+
+<script>
+    //one function to add the new elements
+    function addlang(langname) {
+        const li = document.createElement('li')
+        li.innerHTML = langname
+        document.querySelector("#lang").appendChild(li)
+
+
+    }
+
+    //optimised way to add new elements
+    function addLanguageOpt(langnem) {
+        const li = document.createElement('li')
+        li.className = "child"
+        li.appendChild(document.createTextNode(langnem))
+        document.querySelector("#lang").appendChild(li)
+
+    }
+    addlang("css")
+
+
+    // another way to replace i.e. create new element add content to it
+    // and replacce it with old one
+    const secondlang = document.querySelector("li:nth-child(2)")
+    const newele = document.createElement("li")
+    newele.textContent = "c++"
+    secondlang.replaceWith(newele)
+    
+    //anotherway to replace
+    let firstlang = document.querySelector("li:nth-child(1)")
+    firstlang.outerHTML = "<li>this</li>"
+
+
+    //way to remove
+    firstlang.remove();
+
+   
+</script>
+
+</html>
