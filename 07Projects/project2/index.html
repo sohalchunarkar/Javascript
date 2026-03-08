@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern BMI Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>BMI Calculator</h1>
+            <p>Calculate your Body Mass Index quickly.</p>
+        </header>
+
+        <!-- Main Card -->
+        <main class="glass-card">
+            
+            <!-- Unit Toggle -->
+            <div class="toggle-container">
+                <button class="toggle-btn active" id="metricToggle">Metric (kg/cm)</button>
+                <button class="toggle-btn" id="imperialToggle">Imperial (lb/in)</button>
+            </div>
+
+            <!-- Inputs -->
+            <div class="input-group">
+                <label for="weightMetric" id="weightLabel">Weight (kg)</label>
+                <input type="number" id="weightMetric" placeholder="e.g. 70">
+            </div>
+
+            <div class="input-group">
+                <label for="heightMetric" id="heightLabel">Height (cm)</label>
+                <input type="number" id="heightMetric" placeholder="e.g. 175">
+            </div>
+
+
+              <div class="input-group2">
+                <label for="weightimperial" id="weightLabel">Pound (lb)</label>
+                <input type="number" id="weightimperial" placeholder="e.g. 150">
+            </div>
+
+            <div class="input-group2">
+                <label for="heightImperial" id="heightLabel">Inches (In)</label>
+                <input type="number" id="heightImperial" placeholder="e.g. 65">
+            </div>
+
+            <!-- Action Button -->
+            <button id="calculateBtn">Calculate Now</button>
+
+            <!-- Result Section -->
+            <div id="resultArea" class="hidden">
+                <p class="result-label">Your BMI is</p>
+                <div id="bmiValue">--.-</div>
+                <div id="bmiStatus">Normal Weight</div>
+                <p id="bmiAdvice">
+                    Healthy BMI range: 18.5kg/m² - 25kg/m²
+                </p>
+            </div>
+        </main>
+
+        <!-- Footer Info -->
+        <footer class="footer-grid">
+            <div class="footer-card">
+                <p class="range-title">Underweight</p>
+                <p class="range-val">&lt; 18.5</p>
+            </div>
+            <div class="footer-card">
+                <p class="range-title">Overweight</p>
+                <p class="range-val">25 - 29.9</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js">
+        // Start your logic here!
+    </script>
+</body>
+</html>
