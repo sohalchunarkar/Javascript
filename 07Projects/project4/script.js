@@ -1,6 +1,5 @@
 
 let random = parseInt(Math.random() * 100 + 1)
-
 const input = document.querySelector("#guessField")
 const submit = document.querySelector("#subt")
 const prevGuesses = document.querySelector(".guesses")
@@ -54,9 +53,9 @@ function checkGuess(guess) {
         displayMessage("The number is too low")
     }
 
-else if (guess > random) {
-    displayMessage("The number is too high")
-}
+    else if (guess > random) {
+        displayMessage("The number is too high")
+    }
 }
 
 
@@ -76,7 +75,7 @@ function displayMessage(message) {
 
 function endGame() {
     input.value = ''
-    input.setAttribute('disabled' , '')
+    input.setAttribute('disabled', '')
     p.classList.add('button')
     p.innerHTML = '<h2 id ="newGame">Start new Game </h2>'
     startover.appendChild(p)
@@ -87,8 +86,8 @@ function endGame() {
 
 function StartGame() {
     const newGame = document.querySelector('#newGame')
-    newGame.addEventListener('click' , function(e){
-        random = parseInt(Math.random() * 100 +1)
+    newGame.addEventListener('click', function (e) {
+        random = parseInt(Math.random() * 100 + 1)
         prevGues = []
         numGuess = 1
         prevGuesses.innerHTML = ''
@@ -96,10 +95,7 @@ function StartGame() {
         input.removeAttribute('disabled')
         startover.removeChild(p)
         playGame = true
-
-
-})
-
+    })
 }
 
 
