@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>"Hellow this is My Website"</h1>
+
+    <button id="button">stop the name changeName</button>
+</body>
+
+<script>
+    let tag = document.querySelector("h1")
+    let f1 = function changeName() {
+        tag.innerHTML = "The name is been chagned"
+    }
+    let chag = setTimeout(f1, 1000);
+    document.getElementById("button").addEventListener('click', () => {
+        clearTimeout(chag)
+        console.log("the name changing stopped")
+    })
+</script>
+
+</html>
