@@ -1,15 +1,5 @@
 
 let intervalID
-function startColourchange() {
-    intervalID = setInterval(
-        changecolour , 1000
-    )
-
-    function changecolour() {
-        document.body.style.backgroundColor = randomColour();
-
-    }
-}
 
 const randomColour = () => {
     let hex = '0123456789ABCDEF'
@@ -24,15 +14,24 @@ const randomColour = () => {
 }
 
 
-function stopColurChange()
-{
+
+
+
+document.getElementById("start").addEventListener('click', () => {
+    intervalID = setInterval(
+        changecolour, 1000
+    )
+
+    function changecolour() {
+        document.body.style.backgroundColor = randomColour();
+
+    }
+}
+)
+
+
+
+document.getElementById("stop").addEventListener('click', () => {
     clearInterval(intervalID)
 }
-
-
-
-document.getElementById("start").addEventListener('click',startColourchange)
-
-
-
-document.getElementById("stop").addEventListener('click' , stopColurChange)
+)
