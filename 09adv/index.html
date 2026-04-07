@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #user-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+       
+
+    
+    </style>
+</head>
+
+<body style="background-color: #212121;">
+
+    <button id="get-img">get Image</button>
+    <div id="user-info" ></div>
+
+</body>
+<script>
+    const but = document.getElementById("get-img")
+    const userInfoDiv = document.getElementById('user-info');
+
+    but.addEventListener('click', function () {
+        const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+        let xhr = new XMLHttpRequest();
+        xhr.open('Get', requestUrl)
+        xhr.onreadystatechange = function () {
+            console.log(xhr.readyState)
+            if (xhr.readyState === 4) {
+                let obj = JSON.parse(this.responseText)
+
+                let imgurl = obj.avatar_url
+                let nm = obj.name
+                let followers = obj.followers
+
+                const newDiv = document.createElement('div');
+                   newDiv.style.display = 'flex';
+                newDiv.style.flexDirection = 'column';
+                newDiv.style.alignItems = 'center';
+                newDiv.style.justifyContent = 'center';
+                newDiv.style.textAlign = 'center'; 
+
+                let img = document.createElement('img')
+                img.src = imgurl
+                img.style.width = "205px"
+
+                let fol = document.createElement('h3')
+                fol.innerText = `followers are ${followers} `
+
+                fol.style.color = "white"
+
+                let name = document.createElement('h2')
+                name.innerText = `name is ${nm}`
+
+                name.style.color = "white"
+
+                newDiv.appendChild(img)
+                newDiv.appendChild(name)
+                newDiv.appendChild(fol)
+
+                userInfoDiv.append(newDiv)
+            }
+        }
+
+        xhr.send()
+    })
+
+</script>
+
+</html>
